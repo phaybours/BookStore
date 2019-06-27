@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7937946B-3136-46D7-8314-55F94D63FF51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BookStore.BAL</RootNamespace>
+    <AssemblyName>BookStore.BAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Implementation\AuthorsModel.cs" />
+    <Compile Include="Model\Implementation\BookratingModel.cs" />
+    <Compile Include="Model\Implementation\BookreviewModel.cs" />
+    <Compile Include="Model\Implementation\BooksModel.cs" />
+    <Compile Include="Model\Implementation\BooksOrderModel.cs" />
+    <Compile Include="Model\Implementation\CategoryModel.cs" />
+    <Compile Include="Model\Implementation\CustomersModel.cs" />
+    <Compile Include="Model\Implementation\UserrolesModel.cs" />
+    <Compile Include="Model\Implementation\UsersModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestClasses\AuditTrailRequestClass.cs" />
+    <Compile Include="RequestClasses\AuthorsRequestClass.cs" />
+    <Compile Include="RequestClasses\BookratingRequestClass.cs" />
+    <Compile Include="RequestClasses\BookreviewRequestClass.cs" />
+    <Compile Include="RequestClasses\BooksOrderRequestClass.cs" />
+    <Compile Include="RequestClasses\BooksRequestClass.cs" />
+    <Compile Include="RequestClasses\CategoryRequestClass.cs" />
+    <Compile Include="RequestClasses\CustomersRequestClass.cs" />
+    <Compile Include="RequestClasses\UserrolesRequestClass.cs" />
+    <Compile Include="RequestClasses\UsersRequestClass.cs" />
+    <Compile Include="Utility\SaveLogUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookStore.DAL\BookStore.DAL.csproj">
+      <Project>{005d9c59-ced5-48bf-a55e-0f8bfaac36a8}</Project>
+      <Name>BookStore.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
